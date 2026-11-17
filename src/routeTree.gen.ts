@@ -10,33 +10,128 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as ChallengesRouteImport } from './routes/challenges'
+import { Route as ResearchRouteImport } from './routes/research'
+import { Route as SolutionsRouteImport } from './routes/solutions'
+import { Route as SurveyRouteImport } from './routes/survey'
+import { Route as ThenVsNowRouteImport } from './routes/then-vs-now'
+import { Route as VoicesRouteImport } from './routes/voices'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ChallengesRoute = ChallengesRouteImport.update({
+  id: '/challenges',
+  path: '/challenges',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ResearchRoute = ResearchRouteImport.update({
+  id: '/research',
+  path: '/research',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SolutionsRoute = SolutionsRouteImport.update({
+  id: '/solutions',
+  path: '/solutions',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SurveyRoute = SurveyRouteImport.update({
+  id: '/survey',
+  path: '/survey',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ThenVsNowRoute = ThenVsNowRouteImport.update({
+  id: '/then-vs-now',
+  path: '/then-vs-now',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const VoicesRoute = VoicesRouteImport.update({
+  id: '/voices',
+  path: '/voices',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/challenges': typeof ChallengesRoute
+  '/research': typeof ResearchRoute
+  '/solutions': typeof SolutionsRoute
+  '/survey': typeof SurveyRoute
+  '/then-vs-now': typeof ThenVsNowRoute
+  '/voices': typeof VoicesRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/challenges': typeof ChallengesRoute
+  '/research': typeof ResearchRoute
+  '/solutions': typeof SolutionsRoute
+  '/survey': typeof SurveyRoute
+  '/then-vs-now': typeof ThenVsNowRoute
+  '/voices': typeof VoicesRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/challenges': typeof ChallengesRoute
+  '/research': typeof ResearchRoute
+  '/solutions': typeof SolutionsRoute
+  '/survey': typeof SurveyRoute
+  '/then-vs-now': typeof ThenVsNowRoute
+  '/voices': typeof VoicesRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/challenges'
+    | '/research'
+    | '/solutions'
+    | '/survey'
+    | '/then-vs-now'
+    | '/voices'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/challenges'
+    | '/research'
+    | '/solutions'
+    | '/survey'
+    | '/then-vs-now'
+    | '/voices'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/challenges'
+    | '/research'
+    | '/solutions'
+    | '/survey'
+    | '/then-vs-now'
+    | '/voices'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  ChallengesRoute: typeof ChallengesRoute
+  ResearchRoute: typeof ResearchRoute
+  SolutionsRoute: typeof SolutionsRoute
+  SurveyRoute: typeof SurveyRoute
+  ThenVsNowRoute: typeof ThenVsNowRoute
+  VoicesRoute: typeof VoicesRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +143,67 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/challenges': {
+      id: '/challenges'
+      path: '/challenges'
+      fullPath: '/challenges'
+      preLoaderRoute: typeof ChallengesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/research': {
+      id: '/research'
+      path: '/research'
+      fullPath: '/research'
+      preLoaderRoute: typeof ResearchRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/solutions': {
+      id: '/solutions'
+      path: '/solutions'
+      fullPath: '/solutions'
+      preLoaderRoute: typeof SolutionsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/survey': {
+      id: '/survey'
+      path: '/survey'
+      fullPath: '/survey'
+      preLoaderRoute: typeof SurveyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/then-vs-now': {
+      id: '/then-vs-now'
+      path: '/then-vs-now'
+      fullPath: '/then-vs-now'
+      preLoaderRoute: typeof ThenVsNowRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/voices': {
+      id: '/voices'
+      path: '/voices'
+      fullPath: '/voices'
+      preLoaderRoute: typeof VoicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  ChallengesRoute: ChallengesRoute,
+  ResearchRoute: ResearchRoute,
+  SolutionsRoute: SolutionsRoute,
+  SurveyRoute: SurveyRoute,
+  ThenVsNowRoute: ThenVsNowRoute,
+  VoicesRoute: VoicesRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
