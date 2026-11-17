@@ -1,3 +1,3 @@
-- [ ] Learn Kashmir site (all sections, survey w/ Cloud)
+- [x] Learn Kashmir site (all sections, survey w/ Cloud)
 - [ ] Claude AI study helper
-- [ ] Replace AI images with real web photos (credited)
+- [x] Replace AI images with real web photos (credited)

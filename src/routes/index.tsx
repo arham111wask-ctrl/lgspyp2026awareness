@@ -3,7 +3,6 @@ import { ArrowRight, BarChart3, Compass, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Section } from "@/components/site/PageHero";
 import { Photo } from "@/components/site/Photo";
-import { AskHelper } from "@/components/site/AskHelper";
 import { IMAGES } from "@/content/images";
 import { STATS, SITE } from "@/content/site";
 import { seo } from "@/lib/seo";
@@ -86,10 +85,6 @@ function Home() {
           </div>
         </Section>
       </section>
-
-      <Section>
-        <AskHelper />
-      </Section>
 
       <section className="bg-navy text-navy-foreground">
         <div className="mx-auto max-w-5xl px-5 py-24 text-center lg:px-8">
